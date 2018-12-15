@@ -108,7 +108,7 @@ func ProcessMessage(event Messaging) {
 func MessagesEndpoint(w http.ResponseWriter, r *http.Request) {
 	var callback Callback
 	json.NewDecoder(r.Body).Decode(&callback)
-	if callback.Object == "page" {
+	if callback.Object == "Go-devs" {
 		for _, entry := range callback.Entry {
 			for _, event := range entry.Messaging {
 				ProcessMessage(event)
